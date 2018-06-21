@@ -123,10 +123,9 @@ kubectl -n sysdigcloud create secret generic sysdigcloud-java-certs --from-file=
     datastores/as_kubernetes_pods/manifests/elasticsearch/elasticsearch-statefulset.yaml
     ```
     
-    If there is no storage class defined, create one. Here is an example of creating one
-    at AWS
+    If there is no storage class defined, create one. Below is an example of a manifest for a storage class using GP2 volumes in AWS. Assuming you've saved it as `sysdigcloud-storageclass.yaml`, running `kubectl create -f sysdigcloud-storageclass.yaml` will then create the storage class.
 
-    ```
+    ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
